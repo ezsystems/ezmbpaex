@@ -7,7 +7,7 @@
  * @package ezmbpaex
  */
 
-class eZPaExInfo
+class ezmbpaexInfo
 {
     static function info()
     {

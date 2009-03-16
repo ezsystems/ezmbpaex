@@ -1,0 +1,10 @@
+================================================================
+Password Expiry extension for eZ Publish 4.1 and later - CREDITS
+================================================================
+
+Credits
+-------
+
+We would like to specially thank Microblau ( http://www.microblau.net/ ) and Mitsue-Links Co. Ltd. ( http://www.mitsue.co.jp ), 
+two dedicated eZ Partners, who developed this extension.
+This extension is available, as an Official eZ Publish Certified extension under http://projects.ez.no/mbpaex.

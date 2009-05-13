@@ -25,14 +25,14 @@ Compatible with eZ Publish v4.x
 1. Install
    -------
 
-- Put the mbpaex folder inside your extension folder
+- Put the ezmbpaex folder inside your extension folder
 
 - Update the ezpublish database, execute from <ezroot>:
 
-    $ mysql -u <username> -p<password> <ezdatabase> < extension/mbpaex/install/sql/mbpaex.sql
+    $ mysql -u <username> -p<password> <ezdatabase> < extension/ezmbpaex/install/sql/mbpaex.sql
 
 - Customize default settings in 
-  extension/mbpaex/settings/mbpaex.ini (or an override):
+  extension/ezmbpaex/settings/mbpaex.ini (or an override):
 
     [mbpaexSettings]
     # Regular expression used for password validation when 
@@ -58,7 +58,7 @@ Compatible with eZ Publish v4.x
 
 - Activate the extension in your site.ini
     
-    ActiveExtensions[]=mbpaex
+    ActiveExtensions[]=ezmbpaex
     
 - To prevent undesired access to default user module views that don't take care about the
   password expiration settings there should only be enabled the views needed, then standard 
@@ -82,7 +82,7 @@ Compatible with eZ Publish v4.x
 - Setup override template used in replacement of node/view/full.tpl to display
   users and users groups in admin interface:
   
-  Inside <ezroot>/extension/mbpaex/settings/siteaccess you will find a folder
+  Inside <ezroot>/extension/ezmbpaex/settings/siteaccess you will find a folder
   that will be used in the "admin" siteaccess. If your admin siteaccess has a 
   different name, the content of the override.ini.append.php file must be added 
   to the override.ini of your custom admin siteaccess.
@@ -108,7 +108,7 @@ To prevent that all existing users are forced to change their passwords, there i
 a script available to reset the password_last_updated value of all users to current
 time. You can run this script with the following command:
     
-    $ php extension/mbpaex/install/scripts/setpasswordlastupdated.php
+    $ php extension/ezmbpaex/install/scripts/setpasswordlastupdated.php
 
 When you customize the values in a user group, a checkbox would appear to update
 children nodes with the values of the current group, this way you can customize
@@ -203,7 +203,7 @@ the user changes his password and it expires again.
 6. Audit logs
    ----------
 
-In order to enhance security new audit functions have been defined for mbpaex operations
+In order to enhance security new audit functions have been defined for ezmbpaex operations
 that can be enabled in an override for the audit.ini settings file:
 
 -   user-password-change
@@ -250,8 +250,8 @@ More info available in mbtoken extension.
 - Password history 
 
    
-10. About mbpaex
-    ------------
+10. About ezmbpaex
+    --------------
 
 This extension was developed by Microblau with eZ Systems support.
 

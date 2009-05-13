@@ -1,7 +1,7 @@
 <?php /* #?ini charset="utf8"?
 
 [DataTypeSettings]
-ExtensionDirectories[]=mbpaex
+ExtensionDirectories[]=ezmbpaex
 AvailableDataTypes[]=ezpaex
 
 [ContentOverrideSettings]

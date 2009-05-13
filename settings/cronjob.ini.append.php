@@ -1,7 +1,7 @@
 <?php /*
 
 [CronjobSettings]
-ExtensionDirectories[]=mbpaex
+ExtensionDirectories[]=ezmbpaex
 
 [CronjobPart-send_expiry_notifications]
 Scripts[]

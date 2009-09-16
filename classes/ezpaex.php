@@ -346,11 +346,11 @@ class eZPaEx extends eZPersistentObject
      */
     function generateUpdateChildren( $paexToUpdate = array() )
     {
-        eZDebug::writeDebug('Start', 'eZPaEx::generateUpdateChildren');
+        eZDebug::writeDebug( 'Start', __METHOD__ );
 
         if ( !$this->attribute( 'updatechildren' ) )
         {
-            eZDebug::writeDebug( 'UpdateChildren flag disabled. Nothing to do.','eZPaEx::generateUpdateChildren' );
+            eZDebug::writeDebug( 'UpdateChildren flag disabled. Nothing to do.', __METHOD__ );
         }
         else
         {
@@ -360,7 +360,7 @@ class eZPaEx extends eZPersistentObject
 
             // Fetch the main node that belongs to the current paex
             $mainNodeID = eZContentObjectTreeNode::findMainNode( $this->attribute( 'contentobject_id' ) );
-            eZDebug::writeDebug( 'Going to update subtree starting at node ' . $mainNodeID . '.', 'eZPaEx::generateUpdateChildren' );
+            eZDebug::writeDebug( 'Going to update subtree starting at node ' . $mainNodeID . '.', __METHOD__ );
 
             // Fetch the full subtree array to update
             $fullSubtree = eZContentObjectTreeNode::subTreeByNodeID( array( "MainNodeOnly" => true,
@@ -382,11 +382,11 @@ class eZPaEx extends eZPersistentObject
                 }
                 else
                 {
-                    eZDebug::writeDebug( 'Skipping object ' . $add_paex_to_update->attribute( 'contentobject_id' ) , 'eZPaEx::generateUpdateChildren' );
+                    eZDebug::writeDebug( 'Skipping object ' . $add_paex_to_update->attribute( 'contentobject_id' ) , __METHOD__ );
                 }
             }
         }
-        eZDebug::writeDebug( 'End', 'eZPaEx::generateUpdateChildren' );
+        eZDebug::writeDebug( 'End', __METHOD__ );
 
         return $paexToUpdate;
     }

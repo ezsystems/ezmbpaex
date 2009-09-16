@@ -27,9 +27,10 @@ Compatible with eZ Publish v4.x
 
 - Put the ezmbpaex folder inside your extension folder
 
-- Update the ezpublish database, execute from <ezroot>:
+- Update the ezpublish database, execute from <ezroot>, replacing <yourdatabase>
+  with the database system you're running eZ Publish on (mysql, oracle or postgresql):
 
-    $ mysql -u <username> -p<password> <ezdatabase> < extension/ezmbpaex/install/sql/mbpaex.sql
+    $ mysql -u <username> -p<password> <ezdatabase> < extension/ezmbpaex/sql/<yourdatabase>/mbpaex.sql
 
 - Customize default settings in
   extension/ezmbpaex/settings/mbpaex.ini (or an override):
@@ -93,13 +94,13 @@ Compatible with eZ Publish v4.x
 
 - Clear all caches
 
+- After installation, a new dataype would be available to add as an attribute in
+  the User and User Group classes, "Password Expiration". You must add this datatype
+  to all your User group and User content classes if you want to use the extension.
+
 
 2. Brief usage instructions
    ------------------------
-
-After installation, a new dataye would be available to add as an attribute in
-the User and User Group classes, "Password Expiration". You should add a new
-attribute to your classes using this new datype for the system to behave correctly.
 
 When the attribute gets created it takes the values set in the ini file as default
 values.

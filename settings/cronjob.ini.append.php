@@ -1,14 +1,14 @@
-<?php /*
+<?php /* #?ini charset="utf-8"?
 
 [CronjobSettings]
 ExtensionDirectories[]=ezmbpaex
 
-[CronjobPart-send_expiry_notifications]
+[CronjobPart-ezmbpaex_send_expiry_notifications]
 Scripts[]
-Scripts[]=sendexpirynotifications.php
+Scripts[]=ezmbpaex_sendexpirynotifications.php
 
-[CronjobPart-updatechildren]
+[CronjobPart-ezmbpaex_updatechildren]
 Scripts[]
-Scripts[]=updatechildren.php
+Scripts[]=ezmbpaex_updatechildren.php
 
 */ ?>

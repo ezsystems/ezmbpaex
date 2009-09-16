@@ -31,37 +31,37 @@ Compatible with eZ Publish v4.x
 
     $ mysql -u <username> -p<password> <ezdatabase> < extension/ezmbpaex/install/sql/mbpaex.sql
 
-- Customize default settings in 
+- Customize default settings in
   extension/ezmbpaex/settings/mbpaex.ini (or an override):
 
     [mbpaexSettings]
-    # Regular expression used for password validation when 
+    # Regular expression used for password validation when
     # none is defined in the contentobject
     PasswordValidationRegexp=
-    
+
     # Default lifetime for password in DAYS
     # 0 means no limit (passwords never expire)
     DefaultPasswordLifeTime=0
-    
+
     # Number of seconds before password expiration to send a
     # mail notification to the user
     # Default 172800 (2 days)
     ExpirationNotification=172800
-    
+
     # Number of seconds that the forgot password generated hash will be valid
     # Default 86400 (1 day)
     ForgotPasswordHashLifeTime=86400
 
-    # Login of the eZ user used in the updatechildren cronjob, must have access to 
-    # read the Users section.
+    # Login of the eZ user used in the ezmbpaex_updatechildren cronjob, must
+    # have access to read the Users section.
     UpdateChildrenUser=admin
 
 - Activate the extension in your site.ini
-    
+
     ActiveExtensions[]=ezmbpaex
-    
+
 - To prevent undesired access to default user module views that don't take care about the
-  password expiration settings there should only be enabled the views needed, then standard 
+  password expiration settings there should only be enabled the views needed, then standard
   ones will get access denied. These changes should be added to the global override of
   site.ini:
 
@@ -81,24 +81,24 @@ Compatible with eZ Publish v4.x
 
 - Setup override template used in replacement of node/view/full.tpl to display
   users and users groups in admin interface:
-  
+
   Inside <ezroot>/extension/ezmbpaex/settings/siteaccess you will find a folder
-  that will be used in the "admin" siteaccess. If your admin siteaccess has a 
-  different name, the content of the override.ini.append.php file must be added 
+  that will be used in the "admin" siteaccess. If your admin siteaccess has a
+  different name, the content of the override.ini.append.php file must be added
   to the override.ini of your custom admin siteaccess.
-  
+
 - Re-generate autoloads array to include new classes present in mbPaEx extension:
 
     $ bin/php/ezpgenerateautoloads.php --extension
-    
+
 - Clear all caches
 
 
 2. Brief usage instructions
    ------------------------
 
-After installation, a new dataye would be available to add as an attribute in 
-the User and User Group classes, "Password Expiration". You should add a new 
+After installation, a new dataye would be available to add as an attribute in
+the User and User Group classes, "Password Expiration". You should add a new
 attribute to your classes using this new datype for the system to behave correctly.
 
 When the attribute gets created it takes the values set in the ini file as default
@@ -107,7 +107,7 @@ values.
 To prevent that all existing users are forced to change their passwords, there is
 a script available to reset the password_last_updated value of all users to current
 time. You can run this script with the following command:
-    
+
     $ php extension/ezmbpaex/install/scripts/setpasswordlastupdated.php
 
 When you customize the values in a user group, a checkbox would appear to update
@@ -115,24 +115,24 @@ children nodes with the values of the current group, this way you can customize
 the password lifetime and validation regexp per group easily. (See point 4)
 
 There is a new function to restrict if a user can edit the paex data, editpaex.
-If anyone other than admin should be able to update the paex data, a new policy 
+If anyone other than admin should be able to update the paex data, a new policy
 with this function should be added to his role.
 
-When someone changes the password for another user, the password last update time 
-is set to 0 to force the user change his password the next time he tries to log in. 
+When someone changes the password for another user, the password last update time
+is set to 0 to force the user change his password the next time he tries to log in.
 
     NOTE: There must be a password lifetime defined in order to force the user
-    change his password. If PasswordLifeTime is set to 0 the user never gets 
+    change his password. If PasswordLifeTime is set to 0 the user never gets
     forced to change its password (the password never expires).
 
-When the password for a user is expired, the user never gets logged in, he only 
+When the password for a user is expired, the user never gets logged in, he only
 can access the change password view from userpaex module to change his password.
 
-When a user changes their password, the system prevents to enter the same 
+When a user changes their password, the system prevents to enter the same
 password currently set, this way a new different one must be used.
 
 When a user or group is published the first time, if the current user don't have
-"editpaex" permission set in their roles, the system automatically obtains the 
+"editpaex" permission set in their roles, the system automatically obtains the
 actual paex data set in parent.
 If the user have "editpaex" permission, the values entered in the form will be used,
 to use values set in parent, these fields must be cleared.
@@ -142,42 +142,43 @@ to use values set in parent, these fields must be cleared.
    -------------------------
 
 There is a new view in the userpaex module, forgotpassword, to manage the forgot
-password function. 
+password function.
 
 Has small modifications from the eZ one, to note:
 
 - The user is required to enter his email address
-- A new hash key is generated, and the user receives an email with a link pointing 
-  to a form to choose a new password. Also in this email, there is an expiration 
+- A new hash key is generated, and the user receives an email with a link pointing
+  to a form to choose a new password. Also in this email, there is an expiration
   datetime to inform the user that this link should be removed.
 - When the user clicks the link and sets a new password, the hash key is removed
   from the forgot password table.
-- The time the hash key remains valid is defined in the ini value 
+- The time the hash key remains valid is defined in the ini value
   ForgotPasswordHashLifeTime in seconds, with a default value of 86400 (24 hours)
-- If a second hash key is requested without having used the previous one, they 
+- If a second hash key is requested without having used the previous one, they
   will be removed, so only the last key generated is valid.
 
 
 4. UpdateChildren feature
    ----------------------
 
-In order to prevent failures during the process and to make the user edit process 
+In order to prevent failures during the process and to make the user edit process
 quicker, the update children has moved to a cronjob, so a new cronjob task has to
 be set for the update be actually done.
-The cronjob part defined to do the actual update of the children is "updatechildren"
+The cronjob part defined to do the actual update of the children is
+"ezmbpaex_updatechildren"
 
 The cronjob can be manually run with the following command from <ezroot> folder:
 
-    $php runcronjobs.php updatechildren
+    $php runcronjobs.php ezmbpaex_updatechildren
 
-When a node is marked to update his children, a notification text will be shown 
+When a node is marked to update his children, a notification text will be shown
 in the admin view template for that node.
 
 Only group nodes have the updatechildren checkbox displayed in the edit template.
 
-The updates are applied from outer to inner nodes, so, if you have a node set to 
+The updates are applied from outer to inner nodes, so, if you have a node set to
 update his chidren, and then one of the children nodes also set to update his ones,
-that children node will not be updated with the data from parent, instead, their 
+that children node will not be updated with the data from parent, instead, their
 children will be updated with his data.
 
 It's ok to set up the cronjob to be run in the frequent cronjob part.
@@ -186,15 +187,15 @@ It's ok to set up the cronjob to be run in the frequent cronjob part.
 5. "Password about to Expire" notification
    ---------------------------------------
 
-Optionally if you want your users get notified when their password is about to 
-expire, a new cronjob can be set up to search users based on their password last 
-updated time and password lifetime, and if it results in a password remain time 
-less that configured expiration notification time, a mail will be generated and 
+Optionally if you want your users get notified when their password is about to
+expire, a new cronjob can be set up to search users based on their password last
+updated time and password lifetime, and if it results in a password remain time
+less that configured expiration notification time, a mail will be generated and
 sent to the users so they can change their password prior to expiration.
 
 The cronjob can be manually run with the following command from <ezroot> folder:
 
-    $ php runcronjobs.php send_expiry_notifications
+    $ php runcronjobs.php ezmbpaex_send_expiry_notifications
 
 Only one notification sent to each user, and no more notifications are sent until
 the user changes his password and it expires again.
@@ -240,18 +241,17 @@ More info available in mbtoken extension.
    ---------
 
 - Prevent user enter same password that have set, when editting user contentobject
-  from admin interface (I think that password history has to be implemented to do 
+  from admin interface (I think that password history has to be implemented to do
   this).
 
 
 9. Request for enhancement
    ------------------------
 
-- Password history 
+- Password history
 
-   
+
 10. About ezmbpaex
     --------------
 
 This extension was developed by Microblau with eZ Systems support.
-

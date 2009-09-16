@@ -573,6 +573,16 @@ class eZPaEx extends eZPersistentObject
 
         return $resultArray;
     }
+
+    /**
+    * Checks if the database schema has been created, in order to prevent the
+    * datatype from being registered if it hasn't
+    **/
+    static function schemaCreated()
+    {
+        $db = eZDB::instance();
+        return ( $db->query( "SELECT * FROM ezx_mbpaex" ) !== false );
+    }
 }
 
 ?>

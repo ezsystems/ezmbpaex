@@ -285,7 +285,7 @@ class ezpaextype extends eZDataType
      */
     function onPublish( $contentObjectAttribute, $contentObject, $publishedNodes )
     {
-        eZDebug::writeDebug('Start','ezpaextype::onPublish');
+        eZDebug::writeDebug( 'Start', __METHOD__ );
         $paex = $contentObjectAttribute->content();
         if ( get_class( $paex ) != "eZPaEx" )
         {
@@ -296,12 +296,12 @@ class ezpaextype extends eZDataType
         // NOTE: if the current user don't have permission to edit paex data, and is
         // creating a new object (publishing version 1), force paex object update
         // to get values set in parent
-        if ( !$paex->canEdit() && $contentObject->attribute('current_version')==1 )
+        if ( !$paex->canEdit() && $contentObject->attribute( 'current_version' ) == 1 )
             $paex->updateFromParent( true );
         else
             $paex->updateFromParent();
 
-        eZDebug::writeDebug('End','ezpaextype::onPublish');
+        eZDebug::writeDebug( 'End', __METHOD__ );
         return true;
     }
 
@@ -353,6 +353,13 @@ class ezpaextype extends eZDataType
 
 }
 
-eZDataType::register( ezpaextype::DATA_TYPE_STRING, "ezpaextype" );
+if ( eZPaEx::schemaCreated() )
+{
+    eZDataType::register( ezpaextype::DATA_TYPE_STRING, "ezpaextype" );
+}
+else
+{
+    eZDebug::writeError( "The database schema for ezmbpaex hasn't been imported to the database.", 'ezpaextype' );
+}
 
 ?>

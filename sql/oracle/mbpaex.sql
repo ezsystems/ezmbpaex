@@ -8,3 +8,4 @@ CREATE TABLE ezx_mbpaex (
   expirationnotification_sent integer DEFAULT 0 NOT NULL,
   PRIMARY KEY (contentobject_id)
 );
+

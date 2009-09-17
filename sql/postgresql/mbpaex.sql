@@ -9,3 +9,4 @@ CREATE TABLE ezx_mbpaex (
 );
 
 ALTER TABLE ONLY ezx_mbpaex ADD CONSTRAINT ezx_mbpaex_pkey PRIMARY KEY (contentobject_id);
+

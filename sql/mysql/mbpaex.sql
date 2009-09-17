@@ -6,6 +6,6 @@ CREATE TABLE ezx_mbpaex (
   password_last_updated int(11) NOT NULL DEFAULT 0,
   updatechildren int(2) NOT NULL DEFAULT 0,
   expirationnotification_sent int(2) NOT NULL DEFAULT 0,
-  
+
   PRIMARY KEY  (contentobject_id)
 );

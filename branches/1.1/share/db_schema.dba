@@ -1,0 +1,77 @@
+<?php
+// This array contains the database schema
+$schema = array (
+  'ezx_mbpaex' => 
+  array (
+    'name' => 'ezx_mbpaex',
+    'fields' => 
+    array (
+      'contentobject_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'expirationnotification' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => -1,
+      ),
+      'expirationnotification_sent' => 
+      array (
+        'length' => 2,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'password_last_updated' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'passwordlifetime' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => -1,
+      ),
+      'passwordvalidationregexp' => 
+      array (
+        'length' => 150,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'updatechildren' => 
+      array (
+        'length' => 2,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'contentobject_id',
+        ),
+      ),
+    ),
+  ),
+  '_info' => 
+  array (
+    'format' => 'generic',
+  ),
+);
+
+?>

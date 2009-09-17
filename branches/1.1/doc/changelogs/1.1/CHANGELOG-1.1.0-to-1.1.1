@@ -1,0 +1,15 @@
+Changes from 1.1.0 to 1.1.1
+
+*General:
+- Added sql file to install on Oracle
+
+*Cronjobs:
+- Unified cronjob scripts names:
+  - Renamed sendexpirynotifications.php to ezmbpaex_sendexpirynotifications.php
+  - Renamed updatechildren.php ezmbpaex_updatechildren.php
+  - Reflected these changes in cronjob.ini. The parts are now named
+    mbpaex_send_expiry_notifications and mbpaex_updatechildren
+
+*Bugfixes:
+- Fixed issue #15407: ezmbpaex : update_children cronjob does not work
+- Fixed issue #15377: ezmbpaex extension can truncate ezuser table if installed slightly wrong

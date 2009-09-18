@@ -26,6 +26,11 @@ class eZPaExTypeTest extends ezpDatabaseTestCase
     {
         parent::tearDown();
     }
+
+    public function testA()
+    {
+        $this->markTestIncomplete( "placeholder" );
+    }
 }
 
 ?>

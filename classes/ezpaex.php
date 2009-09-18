@@ -163,7 +163,7 @@ class eZPaEx extends eZPersistentObject
 	 */
 	function isExpired()
 	{
-        eZDebug::writeDebug( 'Ch1eck expiration', 'eZPaEx::isExpired' );
+        eZDebug::writeDebug( 'Check expiration', __METHOD__ );
 
         // If passwordlifetime is not defined or 0 (zero, infinite lifetime) passwords never expire.
         if ( ( $this->attribute( 'passwordlifetime' ) == self::NOT_DEFINED ) ||
@@ -173,8 +173,8 @@ class eZPaEx extends eZPersistentObject
         $passwordLastUpdated = $this->attribute( 'password_last_updated' );
         $actualPasswordlifetime = ceil( ( ( ( ( time() - $passwordLastUpdated ) / 60 ) / 60 ) / 24 ) );
 
-        eZDebug::writeDebug( $passwordLastUpdated, 'eZPaEx::isExpired' );
-        eZDebug::writeDebug( $actualPasswordlifetime, 'eZPaEx::isExpired' );
+        eZDebug::writeDebug( $passwordLastUpdated, __METHOD__ );
+        eZDebug::writeDebug( $actualPasswordlifetime, __METHOD__ );
 
         if ( ( $actualPasswordlifetime > $this->attribute( 'passwordlifetime' ) ) ||
                $passwordLastUpdated == 0 ||

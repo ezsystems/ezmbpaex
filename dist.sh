@@ -1,0 +1,10 @@
+#!/bin/bash
+EXTENSION_NAME="eZ Password Expiry"
+EXTENSION_IDENTIFIER="ezmbpaex"
+EXTENSION_SUMMARY="Extension providing password expiry functionality"
+EXTENSION_LICENSE="GNU General Public License v2.0"
+EXTENSION_VERSION="1.1.1"
+EXTENSION_PUBLISH_VERSION="4.2"
+EXTENSION_ARCHIVE_NAME="ezmbpaex"
+EXTENSION_PHP_VERSION="5.2"
+# EXTENSION_FILTER_FILES=""

@@ -100,7 +100,7 @@ class eZPaExTest extends ezpDatabaseTestCase
             $updateChildren = 0,
             $expirationNotificationSent = 1 );
 
-        $this->assertEquals( $contentObjectID, $paex->attribute( 'id' ),
+        $this->assertEquals( $contentObjectID, $paex->attribute( 'contentobject_id' ),
             "attribute contentobject_id doesn't match" );
         $this->assertEquals( $regexp, $paex->attribute( 'passwordvalidationregexp' ),
             "attribute passwordvalidationregexp doesn't match" );

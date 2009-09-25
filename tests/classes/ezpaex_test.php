@@ -19,6 +19,10 @@ class eZPaExTest extends ezpDatabaseTestCase
         $this->setName( "eZ Password Expiry Unit Tests" );
     }*/
 
+    /**
+     * setUp():
+     * - creates a PAEX object for the admin user
+     **/
     public function setUp()
     {
         parent::setUp();
@@ -28,7 +32,7 @@ class eZPaExTest extends ezpDatabaseTestCase
         $row = array( 'contentobject_id' => 14,
                       'passwordvalidationregexp' => '',
                       'passwordlifetime' => 3,
-                      'expirationnotification' => 0,
+                      'expirationnotification' => eZPaEx::NOT_DEFINED,
                       'password_last_updated' => $this->paexTime,
                       'updatechildren' => 0,
                       'expirationnotification_sent' => 0 );
@@ -37,9 +41,17 @@ class eZPaExTest extends ezpDatabaseTestCase
         $this->paexINI = eZINI::instance( 'mbpaex.ini' );
     }
 
+    /**
+     * tearDown():
+     * - deletes the admin PAEX object if it still exists
+     **/
     public function tearDown()
     {
         parent::tearDown();
+        
+        // remove the PAEX object if it hasn't been removed by the test
+        if ( eZPaEx::fetch( $this->paex->attribute( 'contentobject_id' ) ) )
+            eZPaEx::removePaex( $this->paex->attribute( 'contentobject_id' ) );
     }
 
     /**
@@ -95,7 +107,7 @@ class eZPaExTest extends ezpDatabaseTestCase
             $contentObjectID = $user->attribute( 'id' ),
             $regexp = '',
             $passwordLifetime = 10,
-            $expirationNotification = 1,
+            $expirationNotification = eZPaEx::NOT_DEFINED,
             $time = time(),
             $updateChildren = 0,
             $expirationNotificationSent = 1 );
@@ -195,7 +207,114 @@ class eZPaExTest extends ezpDatabaseTestCase
 
         $this->assertEquals( $expected, $this->paex->isExpired() );
     }
+    
+    /**
+     * Unit test for eZPaEx::isUser()
+     */
+    public function testIsUser()
+    {
+        $this->assertTrue( $this->paex->isUser(), "PaEx object should have been a user" );
+        
+        $paex = new eZPaEx( array() );
+        $this->assertFalse( $paex->isUser(), "PaEx object shouldn't have been a user" );
+    }
+    
+    /**
+     * Unit test for eZPaEx::hasRegexp
+     */
+    function testHasRegexp()
+    {
+        // No regexp on the default object
+        $this->assertFalse( $this->paex->hasRegexp(), "PaEx object shouldn't have a regexp" );
+        
+        // Set a regexp and test again
+        $this->paex->setAttribute( 'passwordvalidationregexp', '/^[a-z0-9]$/' );
+        $this->assertTrue( $this->paex->hasRegexp(), "PaEx object should have a regexp" );
+    }
+    
+    /**
+     * Unit test for eZPaEx::hasLifeTime()
+     */
+    function testHasLifeTime()
+    {
+        $this->assertTrue( $this->paex->hasLifeTime(), "PaEx object should have a lifetime" );
+        
+        // Set lifetime to an empty value
+        $this->paex->setAttribute( 'passwordlifetime', '' );
+        $this->assertFalse( $this->paex->hasLifeTime(), "PaEx object shouldn't have a lifetime (empty string)" );
+        
+        // Set lifetime to the NOT_DEFINED constant
+        $this->paex->setAttribute( 'passwordlifetime', eZPaEx::NOT_DEFINED );
+        $this->assertFalse( $this->paex->hasLifeTime(), "PaEx object shouldn't have a lifetime (eZPaEx::NOT_DEFINED)" );
+    }
+    
+    /**
+     * Unit test for eZPaEx::hasNotification()
+     */
+    function testHasNotification()
+    {
+        // default object has expirationnotification set to eZPaEx::NOT_DEFINED
+        $this->assertFalse( $this->paex->hasNotification(), "PaEx object should not have a lifetime" );
+        
+        // check with null
+        $this->paex->setAttribute( 'expirationnotification', null );
+        $this->assertFalse( $this->paex->hasNotification(), "PaEx object should not have a lifetime" );
+        
+        // check with empty string
+        $this->paex->setAttribute( 'expirationnotification', '' );
+        $this->assertFalse( $this->paex->hasNotification(), "PaEx object should not have a lifetime" );
+        
+        // check with an actual value
+        $this->paex->setAttribute( 'expirationnotification', 172800 );
+        $this->assertTrue( $this->paex->hasNotification(), "PaEx object should have a lifetime" );
+    }
 
+    /**
+     * Unit test for eZPaEx::validatePassword()
+     * 
+     *  @dataProvider providerForTestValidatePassword
+     */
+    function testValidatePassword( $regexp, $expected, $password = 'publish' )
+    {
+        // The default object has an empty regexp, will always be valid
+        $this->paex->setAttribute( 'passwordvalidationregexp', $regexp );
+        if ( $expected === true )
+        {
+            $this->assertTrue( $this->paex->validatePassword( $password ) );
+        }
+        elseif ( $expected === false )
+        {
+            $this->assertFalse( $this->paex->validatePassword( $password ) );
+        }
+        else
+        {
+            $this->markTestSkipped( "Unknown value for \$expected" );
+        }
+    }
+    
+    /**
+     * Data provider for testValidatePassword()
+     * 
+     * @see eZPaExTest::testValidatePassword()
+     */
+    public static function providerForTestValidatePassword()
+    {
+        return array(
+            // empty values
+            array( '', true ),
+            array( null, true ),
+            array( eZPaEx::NOT_DEFINED, true ),
+            
+            // test different regexp forms
+            array( '^[0-9a-z]+$', true ),
+            array( '/^[0-9a-z]+$/', true),
+            
+            // a few rejected passwords
+            array( '^[0-9a-z]+$', false, 'my_password' ),
+            array( '^[0-9]+$', false, '#@~&' )
+        );
+    }
+    
     /**
      * dataProvider for testIsExpired()
      **/
@@ -213,18 +332,18 @@ class eZPaExTest extends ezpDatabaseTestCase
             array( 15, strtotime( 'now - 20 days' ), true ),
         );
     }
-
+    
     /**
-    * Helper method that creates a new user.
-    * Currently only creates in users/guest_accounts.
-    * First and last name will be a splitup of username
-    *
-    * @param string $username
-    * @param string $password If not provided, uses the username as password
-    * @param string $email If not provided, uses '<username><at>test.ez.no'
-    *
-    * @return eZContentObject
-    **/
+     * Helper method that creates a new user.
+     * Currently only creates in users/guest_accounts.
+     * First and last name will be a splitup of username
+     *
+     * @param string $username
+     * @param string $password If not provided, uses the username as password
+     * @param string $email If not provided, uses '<username><at>test.ez.no'
+     *
+     * @return eZContentObject
+     */
     protected static function createUser( $username, $password = false, $email = false )
     {
         $firstname = substr( $username, 0, floor( strlen( $username ) / 2 ) );

@@ -12,7 +12,7 @@ class ezmbpaexInfo
     static function info()
     {
         return array( 'Name'      => 'eZ Password Expiry',
-                      'Version'   => '1.1.1',
+                      'Version'   => '1.2.0',
                       'Copyright' => 'Copyright (C) 2009 eZ Systems AS',
                       'License'   => 'GNU General Public License v2.0',
                       'Credits'   => '<a href="http://www.microblau.net/">Microblau</a> and <a href="http://www.mitsue.co.jp">Mitsue-Links Co. Ltd.</a>, two dedicated eZ Partners.'

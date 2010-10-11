@@ -64,7 +64,7 @@ class eZPaExTest extends ezpDatabaseTestCase
         $this->assertEquals( 14,              $this->paex->attribute( 'contentobject_id' ) );
         $this->assertEquals( '',              $this->paex->attribute( 'passwordvalidationregexp' ) );
         $this->assertEquals( 3,               $this->paex->attribute( 'passwordlifetime' ) );
-        $this->assertEquals( 0,               $this->paex->attribute( 'expirationnotification' ) );
+        $this->assertEquals( eZPaEx::NOT_DEFINED, $this->paex->attribute( 'expirationnotification' ) );
         $this->assertEquals( $this->paexTime, $this->paex->attribute( 'password_last_updated' ) );
         $this->assertEquals( 0,               $this->paex->attribute( 'updatechildren' ) );
         $this->assertEquals( 0,               $this->paex->attribute( 'expirationnotification_sent' ) );

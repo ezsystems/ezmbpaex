@@ -123,7 +123,7 @@ if ( $module->isCurrentAction( "Generate" ) )
                 $emailSender = $ini->variable( 'MailSettings', 'AdminEmail' );
             $mail->setSender( $emailSender );
             $mail->setReceiver( $receiver );
-            $subject = ezi18n( 'kernel/user/register', 'Registration info' );
+            $subject = ezpI18n::tr( 'kernel/user/register', 'Registration info' );
             if ( $tpl->hasVariable( 'subject' ) )
                 $subject = $tpl->variable( 'subject' );
             $mail->setSubject( $subject );
@@ -228,9 +228,9 @@ else if ( $module->isCurrentAction( "ChangePassword" ) && $hashKeyValidated )
 
 $Result = array();
 $Result['content'] = $tpl->fetch( 'design:userpaex/forgotpassword.tpl' );
-$Result['path'] = array( array( 'text' => ezi18n( 'kernel/user', 'User' ),
+$Result['path'] = array( array( 'text' => ezpI18n::tr( 'kernel/user', 'User' ),
                                 'url' => false ),
-                         array( 'text' => ezi18n( 'kernel/user', 'Forgot password' ),
+                         array( 'text' => ezpI18n::tr( 'kernel/user', 'Forgot password' ),
                                 'url' => false ) );
 
 if ( $ini->variable( 'SiteSettings', 'LoginPage' ) == 'custom' )

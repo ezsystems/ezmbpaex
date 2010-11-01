@@ -166,9 +166,9 @@ $tpl->setVariable( "newPasswordMustDiffer", $newPasswordMustDiffer );
 $tpl->setVariable( "message", $message );
 
 $Result = array();
-$Result['path'] = array( array( 'text' => ezi18n( 'kernel/user', 'User' ),
+$Result['path'] = array( array( 'text' => ezpI18n::tr( 'kernel/user', 'User' ),
                                 'url' => false ),
-                         array( 'text' => ezi18n( 'kernel/user', 'Change password' ),
+                         array( 'text' => ezpI18n::tr( 'kernel/user', 'Change password' ),
                                 'url' => false ) );
 $Result['content'] = $tpl->fetch( "design:userpaex/password.tpl" );
 

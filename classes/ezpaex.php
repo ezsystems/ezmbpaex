@@ -514,7 +514,7 @@ class eZPaEx extends eZPersistentObject
         $mail->setSender( $emailSender );
         $mail->setReceiver( $receiver );
 
-        $subject = ezi18n( 'mbpaex/userpaex', 'Your password is about to expire' );
+        $subject = ezpI18n::tr( 'mbpaex/userpaex', 'Your password is about to expire' );
         if ( $tpl->hasVariable( 'subject' ) )
             $subject = $tpl->variable( 'subject' );
 

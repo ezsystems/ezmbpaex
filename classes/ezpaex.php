@@ -372,8 +372,8 @@ class eZPaEx extends eZPersistentObject
                 // Fetch the paex for each node
                 $addPaexToUpdate = eZPaEx::fetch( $node["contentobject_id"] );
                 // If the paex is not marked to updatechildren, update the paex object
-                if ( ( get_class( $addPaexToUpdate ) == "eZPaEx" ) &&
-                     ( $addPaexToUpdate->attribute( 'updatechildren' ) !=1 ) )
+                if ( $addPaexToUpdate instanceof eZPaEx  &&
+                     $addPaexToUpdate->attribute( 'updatechildren' ) != 1 )
                 {
                     $addPaexToUpdate->setAttribute('passwordvalidationregexp', $newPasswordvalidationregexp );
                     $addPaexToUpdate->setAttribute('passwordlifetime', $newPasswordlifetime );
@@ -422,7 +422,7 @@ class eZPaEx extends eZPersistentObject
             $parentMainNodeID = $mainNode->attribute('parent_node_id');
             $parentContentObject = eZContentObject::fetchByNodeID( $parentMainNodeID );
             $parentPaex = eZPaEx::getPaEx($parentContentObject->attribute('id'));
-            if ( is_object( $parentPaex ) && get_class( $parentPaex ) == "eZPaEx" )
+            if ( $parentPaex instanceof eZPaEx )
             {
                 $paexUpdated = false;
 

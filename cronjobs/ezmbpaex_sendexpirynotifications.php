@@ -31,7 +31,7 @@ else
     {
         $userID = $paexObject->attribute( 'contentobject_id' );
         $userObject = eZUser::fetch( $userID );
-        if ( ( get_class( $userObject ) == 'eZUser' ) && $userObject->isEnabled() )
+        if ( $userObject instanceof eZUser && $userObject->isEnabled() )
         {
             if ( !$paexObject->sendExpiryNotification( $userObject ) )
             {

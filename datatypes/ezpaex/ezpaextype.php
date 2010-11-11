@@ -269,7 +269,7 @@ class ezpaextype extends eZDataType
     function storeObjectAttribute( $contentObjectAttribute )
     {
         $paex = $contentObjectAttribute->content();
-        if ( get_class( $paex ) != "eZPaEx" )
+        if ( !$paex instanceof eZPaEx )
         {
 			// create a default paex object
             $paex = eZPaEx::create( $contentObjectAttribute->attribute( "contentobject_id" ) );
@@ -287,7 +287,7 @@ class ezpaextype extends eZDataType
     {
         eZDebug::writeDebug( 'Start', __METHOD__ );
         $paex = $contentObjectAttribute->content();
-        if ( get_class( $paex ) != "eZPaEx" )
+        if ( !$paex instanceof eZPaEx )
         {
             return true;
         }

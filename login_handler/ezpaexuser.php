@@ -40,7 +40,7 @@ class eZPaExUser extends eZUser
      */
     public function __construct( $row = null )
     {
-        @parent::eZUser( $row );
+        parent::eZUser( $row );
     }
 
     /**

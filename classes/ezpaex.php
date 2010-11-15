@@ -67,7 +67,7 @@ class eZPaEx extends eZPersistentObject
     /**
 	 * Creates a default ezpaex object for the corresponding contentobject_id
      *
-	 * @param $contentObjectID contentobject id of the ezpaex object
+	 * @param int $contentObjectID contentobject id of the ezpaex object
 	 * @return eZPaEx object
 	 */
 	static function create( $contentObjectID )
@@ -77,8 +77,8 @@ class eZPaEx extends eZPersistentObject
 
         // Get default values from ini
         $iniPasswordValidationRegexp = $ini->variable( 'mbpaexSettings', 'PasswordValidationRegexp' );
-        $iniDefaultPasswordLifeTime = $ini->variable( 'mbpaexSettings', 'DefaultPasswordLifeTime' );
-        $iniExpirationNotification = $ini->variable( 'mbpaexSettings', 'ExpirationNotification' );
+        $iniDefaultPasswordLifeTime  = $ini->variable( 'mbpaexSettings', 'DefaultPasswordLifeTime' );
+        $iniExpirationNotification   = $ini->variable( 'mbpaexSettings', 'ExpirationNotification' );
 
         $row = array(
             'contentobject_id' => $contentObjectID,
@@ -97,12 +97,12 @@ class eZPaEx extends eZPersistentObject
      * Fills in the $id, $passwordvalidationregexp, $passwordlifetime
      * and $expirationnotification $password_last_updated for the paex
      *
-     * @param $id ID of the contentobject this paex belongs to
-     * @param $passwordvalidationregexp Regexp to use in password validation
-     * @param $passwordlifetime Max password life time
-     * @param $expirationnotification Time before expiration to send a notification
-     * @param $password_last_updated Time the password for the contentobject this paex belongs to was updated
-     * @param $updatechildren 1 if the children of the main node have to be updated, 0 if not
+     * @param int $id ID of the contentobject this paex belongs to
+     * @param string $passwordvalidationregexp Regexp to use in password validation
+     * @param int $passwordlifetime Max password life time
+     * @param int $expirationnotification Time before expiration to send a notification
+     * @param int $password_last_updated Time the password for the contentobject this paex belongs to was updated
+     * @param int $updatechildren 1 if the children of the main node have to be updated, 0 if not
      */
     function setInformation( $id, $passwordvalidationregexp, $passwordlifetime,
                              $expirationnotification, $password_last_updated = 0,
@@ -128,7 +128,7 @@ class eZPaEx extends eZPersistentObject
     /**
      * Removes the ezpaex data from the mbpaex table.
      *
-     * @param $paexID ID of the paex object to remove
+     * @param int $paexID ID of the paex object to remove
      */
     static function removePaex( $paexID )
     {
@@ -139,8 +139,8 @@ class eZPaEx extends eZPersistentObject
 	/**
 	 *	Fetch the eZPaEx persitentobject
      *
-	 * @param $id contentobject_id to fetch
-	 * @param $asObject	return the PO as an object or as an array
+	 * @param int $id contentobject_id to fetch
+	 * @param bool $asObject	return the PO as an object or as an array
      *
 	 * @return eZPaEx as PO or array
 	 */
@@ -252,7 +252,7 @@ class eZPaEx extends eZPersistentObject
 	/**
 	 * Check if password matches regexp validation
      *
-     * @param $password Actual password to check
+     * @param string $password Actual password to check
 	 * @return bool
 	*/
     function validatePassword( $password )
@@ -276,26 +276,26 @@ class eZPaEx extends eZPersistentObject
      * Get actual values for PaEx data for the given contentobject id.
      * If not defined for the given coID, use defaults.
      *
-     * @param  $ezcoid contentobject_id to get PaEx for
-     * @return actual PaEx applicable data
+     * @param int $ezcoid contentobject_id to get PaEx for
+     * @return eZPaEx actual PaEx applicable data
     */
     static function getPaEx( $ezcoid )
     {
-        eZDebug::writeDebug( 'Start', 'eZPaEx::getPaEx' );
-
         $currentPaex = eZPaEx::fetch( $ezcoid );
 
         // If we don't have paex object for the current object id (this usually
         // means that there is no ezpaex attribute in the class of the ezcoid),
         // create a default one
-        if ( !is_object( $currentPaex ) )
-            $currentPaex = eZPaEx::create( $ezcoid );
+        if ( !$currentPaex instanceof eZPaEx )
+        {
+            return eZPaEx::create( $ezcoid );
+        }
 
         // Get default paex values from ini to use in case there is anyone missing in the object
         $ini = eZINI::instance( 'mbpaex.ini' );
         $iniPasswordValidationRegexp = $ini->variable( 'mbpaexSettings', 'PasswordValidationRegexp' );
-        $iniDefaultPasswordLifeTime = $ini->variable( 'mbpaexSettings', 'DefaultPasswordLifeTime' );
-        $iniExpirationNotification = $ini->variable( 'mbpaexSettings', 'ExpirationNotification' );
+        $iniDefaultPasswordLifeTime  = $ini->variable( 'mbpaexSettings', 'DefaultPasswordLifeTime' );
+        $iniExpirationNotification   = $ini->variable( 'mbpaexSettings', 'ExpirationNotification' );
 
         // If still any empty values in the paex object, set defaults from ini
         if ( !$currentPaex->hasRegexp() )
@@ -315,8 +315,6 @@ class eZPaEx extends eZPersistentObject
         }
 
         eZDebug::writeDebug( 'PasswordLastUpdated value: "' . $currentPaex->attribute( 'password_last_updated' ) . '"', 'eZPaEx::getPaEx' );
-
-        eZDebug::writeDebug('End','eZPaEx::getPaEx');
 
         return $currentPaex;
     }
@@ -341,7 +339,7 @@ class eZPaEx extends eZPersistentObject
     /**
      * Generate array of paex objects to update based on updatechildren status
      *
-     * @param  $paex_to_update     Array of already updated paex objects
+     * @param array $paex_to_update     Array of already updated paex objects
      * @return array of paex objects to update, with final values set.
      */
     function generateUpdateChildren( $paexToUpdate = array() )
@@ -408,6 +406,7 @@ class eZPaEx extends eZPersistentObject
      * Update current empty paex fields with values get from paex object of
      * parent of current main node.
      *
+     * @param bool $forceUpdate
      * @return true
     */
     function updateFromParent( $forceUpdate = false )
@@ -483,7 +482,7 @@ class eZPaEx extends eZPersistentObject
     /**
      * Send password expiry notification to user
      *
-     * @param $user ezuser object that contains the destination email address
+     * @param eZUser $user ezuser object that contains the destination email address
      * @return true if notification sent correctly, false if not.
      */
     function sendExpiryNotification( $user )
@@ -549,6 +548,7 @@ class eZPaEx extends eZPersistentObject
     /**
      * Fetch the eZPaEx objects that have updatechildren flag set to 1
      *
+     * @param bool $asObject
      * @return array of contentobject_id's corresponding to users that have to be notified
      */
     static function fetchUpdateChildrenPendingList( $asObject = true )

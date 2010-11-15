@@ -108,6 +108,13 @@ if ( $http->hasPostVariable( "OKButton" ) && $user)
                         $user->store();
                         $paex->resetPasswordLastUpdated();
                         $oldPassword = '';
+
+                        if ( $http->hasPostVariable( "RedirectOnChange" ) )
+                        {
+                            return $Module->redirectTo( $http->postVariable( "RedirectOnChange" ) );
+                        }
+                        eZRedirectManager::redirectTo( $Module, $redirectionURI );
+                        return;
                     }
                 }
             }

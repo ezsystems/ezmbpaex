@@ -59,7 +59,7 @@ class eZPaExUser extends eZUser
             $userID = $user->attribute( 'contentobject_id' );
             $paex = eZPaEx::getPaEx( $userID );
 
-            if ( $paex->isExpired() )
+            if ( $paex instanceof eZPaEx && $paex->isExpired() )
             {
                 self::passwordHasExpired( $user );
                 return false;

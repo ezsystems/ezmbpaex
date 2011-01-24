@@ -54,10 +54,10 @@ class eZPaExUser extends eZUser
     public static function loginUser( $login, $password, $authenticationMatch = false )
     {
         $user = self::_loginUser( $login, $password, $authenticationMatch );
-        if ( is_object( $user ) )
+        if ( $user instanceof eZUser )
         {
             $userID = $user->attribute( 'contentobject_id' );
-            $paex = eZPaEx::getPaEx( $userID );
+            $paex = eZPaEx::getPaEx( $userID, true );
 
             if ( $paex instanceof eZPaEx && $paex->isExpired() )
             {

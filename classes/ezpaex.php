@@ -276,18 +276,32 @@ class eZPaEx extends eZPersistentObject
      * Get actual values for PaEx data for the given contentobject id.
      * If not defined for the given coID, use defaults.
      *
-     * @param int $ezcoid contentobject_id to get PaEx for
-     * @return eZPaEx actual PaEx applicable data
+     * @param int $ezcoid Contentobject id (user id) to get PaEx for
+     * @param bool $checkIfUserHasDatatype See if user has paex datatype, default false
+     * @return eZPaEx|null Actual PaEx applicable data, null if $checkIfUserHasDatatype = true
+     *                     and object does not have ezpaex datatype
     */
-    static function getPaEx( $ezcoid )
+    static function getPaEx( $ezcoid, $checkIfUserHasDatatype = false )
     {
         $currentPaex = eZPaEx::fetch( $ezcoid );
 
-        // If we don't have paex object for the current object id (this usually
-        // means that there is no ezpaex attribute in the class of the ezcoid),
-        // create a default one
+        // If we don't have paex object for the current object id, create a default one
         if ( !$currentPaex instanceof eZPaEx )
         {
+            // unless user does not have paex datatype
+            if ( $checkIfUserHasDatatype )
+            {
+                //eZContentObject::fetch( $ezcoid );
+                $paexDataTypeCount = eZPersistentObject::count( eZContentObjectAttribute::definition(),
+                                                array( 'contentobject_id' => $ezcoid,
+                                                       'data_type_string' => ezpaextype::DATA_TYPE_STRING ),
+                                                'id' );
+                if ( !$paexDataTypeCount )
+                {
+                    eZDebug::writeDebug( "User id {$ezcoid} does not have paex datatype", __METHOD__ );
+                    return null;
+                }
+            }
             return eZPaEx::create( $ezcoid );
         }
 

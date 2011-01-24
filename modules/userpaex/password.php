@@ -67,7 +67,7 @@ if ( $http->hasPostVariable( "OKButton" ) && $user)
 
     if ( $user->authenticateHash( $login, $oldPassword, $site, $type, $hash ) ) // Old password is correct
     {
-        if (  $newPassword ==  $confirmPassword )
+        if (  $newPassword == $confirmPassword )
         {
             if ( !$user->validatePassword($newPassword) )
             {
@@ -80,7 +80,7 @@ if ( $http->hasPostVariable( "OKButton" ) && $user)
             else
             {
                 // Patch for use mbpaex::validatePassword
-                $paex = eZPaEx::getPaEx($UserID);
+                $paex = eZPaEx::getPaEx( $UserID );
                 if (!$paex->validatePassword($newPassword))
                 {
                     // if audit is enabled password changes should be logged
@@ -108,6 +108,8 @@ if ( $http->hasPostVariable( "OKButton" ) && $user)
                         $user->store();
                         $paex->resetPasswordLastUpdated();
                         $oldPassword = '';
+
+                        eZUser::setCurrentlyLoggedInUser( $user, $UserID );
 
                         if ( $http->hasPostVariable( "RedirectOnChange" ) )
                         {

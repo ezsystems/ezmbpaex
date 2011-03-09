@@ -1,98 +1,162 @@
-<!DOCTYPE TS><TS>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0">
+<context>
+    <name>design/admin/content/edit</name>
+    <message>
+        <source>View and manage (copy, delete, etc.) the versions of this object.</source>
+        <translation>Afficher et gérer (copier, supprimer, etc.) les versions de cet objet.</translation>
+    </message>
+    <message>
+        <source>Manage versions</source>
+        <translation>Gérer les versions</translation>
+    </message>
+</context>
 <context>
     <name>design/admin/node/view/full</name>
     <message>
         <source>Last modified</source>
-        <translation type="unfinished">Dernière modification</translation>
+        <translation>Dernière modification</translation>
     </message>
     <message>
         <source>Node ID</source>
-        <translation type="unfinished">ID du noeud</translation>
+        <translation>ID du nœud</translation>
     </message>
     <message>
         <source>Object ID</source>
-        <translation type="unfinished">ID de l&apos;objet </translation>
+        <translation>ID de l&apos;objet </translation>
     </message>
     <message>
         <source>Another language</source>
-        <translation type="unfinished">Autre langue</translation>
+        <translation>Autre langue</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier</translation>
     </message>
     <message>
         <source>Edit the contents of this item.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier le contenu de cet éléments.</translation>
     </message>
     <message>
         <source>Not available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You do not have permissions to edit this item.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non disponible</translation>
     </message>
     <message>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Déplacer</translation>
     </message>
     <message>
         <source>Move this item to another location.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You do not have permissions to move this item to another location.</source>
-        <translation type="unfinished"></translation>
+        <translation>Déplacer cet élément vers un autre emplacement</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer</translation>
     </message>
     <message>
         <source>Remove this item.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You do not have permissions to remove this item.</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer cet élément.</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Prévisualisation</translation>
+    </message>
+    <message>
+        <source>You do not have permission to edit this item.</source>
+        <translation>Vous n'avez pas le droit de modifier cet élément.</translation>
+    </message>
+    <message>
+        <source>You do not have permission to move this item to another location.</source>
+        <translation>Vous n'avez pas le droit de déplacer cet élément vers un autre emplacement.</translation>
+    </message>
+    <message>
+        <source>You do not have permission to remove this item.</source>
+        <translation>Vous n'avez pas le droit de supprimer cet élément.</translation>
+    </message>
+    <message>
+        <source>New translation</source>
+        <translation>Nouvelle traduction</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/pagelayout</name>
+    <message>
+        <source>Current user</source>
+        <translation>Utilisateur identifié</translation>
+    </message>
+    <message>
+        <source>Change name, email, password, etc.</source>
+        <translation>Modifier le nom, l'adresse courriel, le mot de passe, etc.</translation>
+    </message>
+    <message>
+        <source>Change information</source>
+        <translation>Modifier les informations</translation>
+    </message>
+    <message>
+        <source>Change user info</source>
+        <translation>Modifier les informations personnelles</translation>
+    </message>
+    <message>
+        <source>Change password for &lt;%username&gt;.</source>
+        <translation>Changer le mot de passe de &lt;%username&gt;.</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Modifier le mot de passe</translation>
+    </message>
+    <message>
+        <source>There is %basket_count item in the shopping basket.</source>
+        <translation>Le panier comporte %basket_count éléments.</translation>
+    </message>
+    <message>
+        <source>Shopping basket (%basket_count)</source>
+        <translation>Panier (%basket_count)</translation>
+    </message>
+    <message>
+        <source>There are %basket_count items in the shopping basket.</source>
+        <translation>Le panier comporte %basket_count éléments.</translation>
+    </message>
+    <message>
+        <source>Logout from the system.</source>
+        <translation>Quitter.</translation>
+    </message>
+    <message>
+        <source>Logout</source>
+        <translation>Fermeture de session</translation>
     </message>
 </context>
 <context>
     <name>design/standard/user/forgotpassword</name>
     <message>
         <source>Email</source>
-        <translation type="unfinished">Correo electrónico</translation>
+        <translation>Courriel</translation>
     </message>
     <message>
         <source>Your account information</source>
-        <translation type="unfinished"></translation>
+        <translation>Les informations sur votre compte</translation>
     </message>
 </context>
 <context>
     <name>kernel/user</name>
     <message>
         <source>User</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilisateur</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation type="unfinished">Cambiar contraseña</translation>
+        <translation>Modifier mon mot de passe</translation>
     </message>
     <message>
         <source>Forgot password</source>
-        <translation type="unfinished"></translation>
+        <translation>Mot de passe oublié</translation>
     </message>
 </context>
 <context>
     <name>kernel/user/register</name>
     <message>
         <source>Registration info</source>
-        <translation type="unfinished"></translation>
+        <translation>Informations de l'inscription</translation>
     </message>
 </context>
 <context>
@@ -147,7 +211,7 @@
     </message>
     <message>
         <source>Update children nodes?</source>
-        <translation>Mettre à jour les noeuds enfants ?</translation>
+        <translation>Mettre à jour les nœuds enfants ?</translation>
     </message>
     <message>
         <source>undefined</source>
@@ -159,7 +223,7 @@
     </message>
     <message>
         <source>Children update pending, will be done in a few minutes...</source>
-        <translation>Mise à jour des noeuds enfants en attente, sera effectuée dans quelques minutes...</translation>
+        <translation>Mise à jour des nœuds enfants en attente, sera effectuée dans quelques minutes...</translation>
     </message>
 </context>
 <context>

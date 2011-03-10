@@ -16,7 +16,7 @@ $cli = eZCLI::instance();
 $script = eZScript::instance( array( 'debug-message' => '',
                                       'use-session' => true,
                                       'use-modules' => false,
-                                      'use-extensions' => false ) );
+                                      'use-extensions' => true ) );
 
 $script->startup();
 

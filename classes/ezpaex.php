@@ -575,9 +575,13 @@ class eZPaEx extends eZPersistentObject
     }
 
     /**
-    * Checks if the database schema has been created, in order to prevent the
-    * datatype from being registered if it hasn't
-    **/
+     * DEPRECATED since querying a non-existent table will always trigger a fatal error
+     *
+     * Checks if the database schema has been created, in order to prevent the
+     * datatype from being registered if it hasn't
+     *
+     * @deprecated
+     */
     static function schemaCreated()
     {
         $db = eZDB::instance();

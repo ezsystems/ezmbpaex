@@ -350,16 +350,7 @@ class ezpaextype extends eZDataType
     {
         return true;
     }
-
 }
 
-if ( eZPaEx::schemaCreated() )
-{
-    eZDataType::register( ezpaextype::DATA_TYPE_STRING, "ezpaextype" );
-}
-else
-{
-    eZDebug::writeError( "The database schema for ezmbpaex hasn't been imported to the database.", 'ezpaextype' );
-}
-
+eZDataType::register( ezpaextype::DATA_TYPE_STRING, "ezpaextype" );
 ?>

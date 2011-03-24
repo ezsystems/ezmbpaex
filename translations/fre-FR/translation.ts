@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0">
+<!DOCTYPE TS><TS>
 <context>
     <name>design/admin/content/edit</name>
     <message>
@@ -64,15 +62,15 @@
     </message>
     <message>
         <source>You do not have permission to edit this item.</source>
-        <translation>Vous n'avez pas le droit de modifier cet élément.</translation>
+        <translation>Vous n&apos;avez pas le droit de modifier cet élément.</translation>
     </message>
     <message>
         <source>You do not have permission to move this item to another location.</source>
-        <translation>Vous n'avez pas le droit de déplacer cet élément vers un autre emplacement.</translation>
+        <translation>Vous n&apos;avez pas le droit de déplacer cet élément vers un autre emplacement.</translation>
     </message>
     <message>
         <source>You do not have permission to remove this item.</source>
-        <translation>Vous n'avez pas le droit de supprimer cet élément.</translation>
+        <translation>Vous n&apos;avez pas le droit de supprimer cet élément.</translation>
     </message>
     <message>
         <source>New translation</source>
@@ -87,7 +85,7 @@
     </message>
     <message>
         <source>Change name, email, password, etc.</source>
-        <translation>Modifier le nom, l'adresse courriel, le mot de passe, etc.</translation>
+        <translation>Modifier le nom, l&apos;adresse courriel, le mot de passe, etc.</translation>
     </message>
     <message>
         <source>Change information</source>
@@ -141,22 +139,22 @@
     <name>kernel/user</name>
     <message>
         <source>User</source>
-        <translation>Utilisateur</translation>
+        <translation type="obsolete">Utilisateur</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation>Modifier mon mot de passe</translation>
+        <translation type="obsolete">Modifier mon mot de passe</translation>
     </message>
     <message>
         <source>Forgot password</source>
-        <translation>Mot de passe oublié</translation>
+        <translation type="obsolete">Mot de passe oublié</translation>
     </message>
 </context>
 <context>
     <name>kernel/user/register</name>
     <message>
         <source>Registration info</source>
-        <translation>Informations de l'inscription</translation>
+        <translation type="obsolete">Informations de l&apos;inscription</translation>
     </message>
 </context>
 <context>
@@ -164,23 +162,23 @@
     <message>
         <source>Password Expiration</source>
         <comment>Datatype name</comment>
-        <translation>Expiration de mot de passe</translation>
+        <translation type="obsolete">Expiration de mot de passe</translation>
     </message>
     <message>
         <source>The password lifetime must be an integer &gt;= 0</source>
-        <translation>La durée de vie du mot de passe doit être un entier &gt;= 0</translation>
+        <translation type="obsolete">La durée de vie du mot de passe doit être un entier &gt;= 0</translation>
     </message>
     <message>
         <source>The expiration notification time must be an integer &gt;= 86400</source>
-        <translation>Le délai de notification d&apos;expiration doit être un entier &gt;= 86400</translation>
+        <translation type="obsolete">Le délai de notification d&apos;expiration doit être un entier &gt;= 86400</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match the validation rule.</source>
-        <translation>Le mot de passe ne respecte pas la règle de validation.</translation>
+        <translation type="obsolete">Le mot de passe ne respecte pas la règle de validation.</translation>
     </message>
     <message>
         <source>Wrong value in updatechildren field</source>
-        <translation>Valeur incorrecte dans le champ updatechildren</translation>
+        <translation type="obsolete">Valeur incorrecte dans le champ updatechildren</translation>
     </message>
 </context>
 <context>
@@ -270,7 +268,7 @@
     </message>
     <message>
         <source>Your password is about to expire</source>
-        <translation>Votre mot de passe va bientôt expirer</translation>
+        <translation type="obsolete">Votre mot de passe va bientôt expirer</translation>
     </message>
     <message>
         <source>%siteurl your password is about to expire</source>

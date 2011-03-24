@@ -1,26 +1,162 @@
 <!DOCTYPE TS><TS>
 <context>
+    <name>design/admin/content/edit</name>
+    <message>
+        <source>View and manage (copy, delete, etc.) the versions of this object.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/node/view/full</name>
+    <message>
+        <source>Last modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Another language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit the contents of this item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You do not have permission to edit this item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move this item to another location.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You do not have permission to move this item to another location.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove this item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You do not have permission to remove this item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New translation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/pagelayout</name>
+    <message>
+        <source>Current user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change name, email, password, etc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change user info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change password for &lt;%username&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation type="unfinished">Mudar senha</translation>
+    </message>
+    <message>
+        <source>There is %basket_count item in the shopping basket.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shopping basket (%basket_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are %basket_count items in the shopping basket.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logout from the system.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logout</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/forgotpassword</name>
+    <message>
+        <source>Your account information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email</source>
+        <translation type="unfinished">Email</translation>
+    </message>
+</context>
+<context>
     <name>mbpaex/classes/datatypes</name>
     <message>
         <source>Password Expiration</source>
         <comment>Datatype name</comment>
-        <translation>Expiração de senha</translation>
+        <translation type="obsolete">Expiração de senha</translation>
     </message>
     <message>
         <source>The password lifetime must be an integer &gt;= 0</source>
-        <translation>O tempo de vida da senha deve ser um número inteiro &gt;= 0</translation>
+        <translation type="obsolete">O tempo de vida da senha deve ser um número inteiro &gt;= 0</translation>
     </message>
     <message>
         <source>The expiration notification time must be an integer &gt;= 86400</source>
-        <translation>O tempo de notificação de expiração da senha deve ser um número inteiro &gt;= 86400</translation>
+        <translation type="obsolete">O tempo de notificação de expiração da senha deve ser um número inteiro &gt;= 86400</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match the validation rule.</source>
-        <translation>A senha não coincide com a regra de validação.</translation>
+        <translation type="obsolete">A senha não coincide com a regra de validação.</translation>
     </message>
     <message>
         <source>Wrong value in updatechildren field</source>
-        <translation>Valor incorreto para o campo updatechildren</translation>
+        <translation type="obsolete">Valor incorreto para o campo updatechildren</translation>
     </message>
 </context>
 <context>
@@ -110,7 +246,7 @@
     </message>
     <message>
         <source>Your password is about to expire</source>
-        <translation>Sua senha está prestes a expirar</translation>
+        <translation type="obsolete">Sua senha está prestes a expirar</translation>
     </message>
     <message>
         <source>%siteurl your password is about to expire</source>

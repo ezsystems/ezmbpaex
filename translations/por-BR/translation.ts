@@ -1,4 +1,6 @@
-<!DOCTYPE TS><TS>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0">
 <context>
     <name>design/admin/content/edit</name>
     <message>
@@ -136,27 +138,49 @@
     </message>
 </context>
 <context>
+    <name>kernel/user</name>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forgot password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation type="unfinished">Mudar senha</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/register</name>
+    <message>
+        <source>Registration info</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>mbpaex/classes/datatypes</name>
     <message>
         <source>Password Expiration</source>
         <comment>Datatype name</comment>
-        <translation type="obsolete">Expiração de senha</translation>
+        <translation type="unfinished">Expiração de senha</translation>
     </message>
     <message>
         <source>The password lifetime must be an integer &gt;= 0</source>
-        <translation type="obsolete">O tempo de vida da senha deve ser um número inteiro &gt;= 0</translation>
+        <translation type="unfinished">O tempo de vida da senha deve ser um número inteiro &gt;= 0</translation>
     </message>
     <message>
         <source>The expiration notification time must be an integer &gt;= 86400</source>
-        <translation type="obsolete">O tempo de notificação de expiração da senha deve ser um número inteiro &gt;= 86400</translation>
+        <translation type="unfinished">O tempo de notificação de expiração da senha deve ser um número inteiro &gt;= 86400</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match the validation rule.</source>
-        <translation type="obsolete">A senha não coincide com a regra de validação.</translation>
+        <translation type="unfinished">A senha não coincide com a regra de validação.</translation>
     </message>
     <message>
         <source>Wrong value in updatechildren field</source>
-        <translation type="obsolete">Valor incorreto para o campo updatechildren</translation>
+        <translation type="unfinished">Valor incorreto para o campo updatechildren</translation>
     </message>
 </context>
 <context>
@@ -246,7 +270,7 @@
     </message>
     <message>
         <source>Your password is about to expire</source>
-        <translation type="obsolete">Sua senha está prestes a expirar</translation>
+        <translation type="unfinished">Sua senha está prestes a expirar</translation>
     </message>
     <message>
         <source>%siteurl your password is about to expire</source>

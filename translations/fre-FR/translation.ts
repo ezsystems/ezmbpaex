@@ -1,4 +1,6 @@
-<!DOCTYPE TS><TS>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0">
 <context>
     <name>design/admin/content/edit</name>
     <message>
@@ -139,22 +141,22 @@
     <name>kernel/user</name>
     <message>
         <source>User</source>
-        <translation type="obsolete">Utilisateur</translation>
+        <translation type="unfinished">Utilisateur</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation type="obsolete">Modifier mon mot de passe</translation>
+        <translation type="unfinished">Modifier mon mot de passe</translation>
     </message>
     <message>
         <source>Forgot password</source>
-        <translation type="obsolete">Mot de passe oublié</translation>
+        <translation type="unfinished">Mot de passe oublié</translation>
     </message>
 </context>
 <context>
     <name>kernel/user/register</name>
     <message>
         <source>Registration info</source>
-        <translation type="obsolete">Informations de l&apos;inscription</translation>
+        <translation type="unfinished">Informations de l&apos;inscription</translation>
     </message>
 </context>
 <context>
@@ -162,23 +164,23 @@
     <message>
         <source>Password Expiration</source>
         <comment>Datatype name</comment>
-        <translation type="obsolete">Expiration de mot de passe</translation>
+        <translation type="unfinished">Expiration de mot de passe</translation>
     </message>
     <message>
         <source>The password lifetime must be an integer &gt;= 0</source>
-        <translation type="obsolete">La durée de vie du mot de passe doit être un entier &gt;= 0</translation>
+        <translation type="unfinished">La durée de vie du mot de passe doit être un entier &gt;= 0</translation>
     </message>
     <message>
         <source>The expiration notification time must be an integer &gt;= 86400</source>
-        <translation type="obsolete">Le délai de notification d&apos;expiration doit être un entier &gt;= 86400</translation>
+        <translation type="unfinished">Le délai de notification d&apos;expiration doit être un entier &gt;= 86400</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match the validation rule.</source>
-        <translation type="obsolete">Le mot de passe ne respecte pas la règle de validation.</translation>
+        <translation type="unfinished">Le mot de passe ne respecte pas la règle de validation.</translation>
     </message>
     <message>
         <source>Wrong value in updatechildren field</source>
-        <translation type="obsolete">Valeur incorrecte dans le champ updatechildren</translation>
+        <translation type="unfinished">Valeur incorrecte dans le champ updatechildren</translation>
     </message>
 </context>
 <context>
@@ -268,7 +270,7 @@
     </message>
     <message>
         <source>Your password is about to expire</source>
-        <translation type="obsolete">Votre mot de passe va bientôt expirer</translation>
+        <translation type="unfinished">Votre mot de passe va bientôt expirer</translation>
     </message>
     <message>
         <source>%siteurl your password is about to expire</source>

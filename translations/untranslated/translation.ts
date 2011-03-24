@@ -1,4 +1,6 @@
-<!DOCTYPE TS><TS>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0">
 <context>
     <name>design/admin/content/edit</name>
     <message>
@@ -136,6 +138,52 @@
     </message>
 </context>
 <context>
+    <name>kernel/user</name>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forgot password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/register</name>
+    <message>
+        <source>Registration info</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>mbpaex/classes/datatypes</name>
+    <message>
+        <source>Password Expiration</source>
+        <comment>Datatype name</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password lifetime must be an integer &gt;= 0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The expiration notification time must be an integer &gt;= 86400</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password doesn&apos;t match the validation rule.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wrong value in updatechildren field</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>mbpaex/content/datatype</name>
     <message>
         <source>Validation Regexp</source>
@@ -226,6 +274,10 @@
     </message>
     <message>
         <source>%siteurl your password is about to expire</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your password is about to expire</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

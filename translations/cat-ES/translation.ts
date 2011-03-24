@@ -1,4 +1,6 @@
-<!DOCTYPE TS><TS>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0">
 <context>
     <name>design/admin/content/edit</name>
     <message>
@@ -139,34 +141,46 @@
     <name>kernel/user</name>
     <message>
         <source>Change password</source>
-        <translation type="obsolete">Canviar contrasenya</translation>
+        <translation type="unfinished">Canviar contrasenya</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forgot password</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>kernel/user/register</name>
+    <message>
+        <source>Registration info</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>mbpaex/classes/datatypes</name>
     <message>
         <source>Password Expiration</source>
         <comment>Datatype name</comment>
-        <translation type="obsolete">Caducitat de Contrasenya</translation>
+        <translation type="unfinished">Caducitat de Contrasenya</translation>
     </message>
     <message>
         <source>The password lifetime must be an integer &gt;= 0</source>
-        <translation type="obsolete">El temps de vida de la contrasenya ha de ser un nombre &gt;= 0</translation>
+        <translation type="unfinished">El temps de vida de la contrasenya ha de ser un nombre &gt;= 0</translation>
     </message>
     <message>
         <source>The expiration notification time must be an integer &gt;= 86400</source>
-        <translation type="obsolete">El temps de notificació d&apos;expiració ha de ser un nombre &gt;= 86400</translation>
+        <translation type="unfinished">El temps de notificació d&apos;expiració ha de ser un nombre &gt;= 86400</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match the validation rule.</source>
-        <translation type="obsolete">La contrasenya no cumpleix la regla de validació.</translation>
+        <translation type="unfinished">La contrasenya no cumpleix la regla de validació.</translation>
     </message>
     <message>
         <source>Wrong value in updatechildren field</source>
-        <translation type="obsolete">Valor incorrecte al camp updatechildren</translation>
+        <translation type="unfinished">Valor incorrecte al camp updatechildren</translation>
     </message>
 </context>
 <context>
@@ -256,7 +270,7 @@
     </message>
     <message>
         <source>Your password is about to expire</source>
-        <translation type="obsolete">La teva contrasenya és a punt de caducar</translation>
+        <translation type="unfinished">La teva contrasenya és a punt de caducar</translation>
     </message>
     <message>
         <source>%siteurl your password is about to expire</source>

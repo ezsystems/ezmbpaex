@@ -16,8 +16,8 @@ Password Expiration Extension (v1.0RC1)
 0. Release Info
    ------------
 
-Current version: mbPaEx_1.0RC1
-Release Date: Feb 11, 2009.
+Current version: mbPaEx_1.4
+Release Date: March 29th 2011.
 
 Compatible with eZ Publish v4.x
 

@@ -212,13 +212,19 @@ class ezpaextype extends eZDataType
             // Check if the password has changed
             if ( trim( $newPassword ) && ( $newPassword != "_ezpassword" ) )
             {
-                if ( eZUser::currentUserID() == $contentObjectID )
+                $currentUserID = eZUser::currentUserID();
+                if ( $currentUserID == $contentObjectID )
                 {
                     // If self editing, set last_updated to current time
                     $passwordLastUpdated = time();
 
                     // if audit is enabled password changes should be logged
                     eZAudit::writeAudit( 'user-password-change-self', array( ) );
+                }
+                else if ( $currentUserID == eZUser::anonymousId() )
+                {
+                    // register, @see http://issues.ez.no/15391
+                    $passwordLastUpdated = time();
                 }
                 else
                 {

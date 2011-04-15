@@ -481,6 +481,18 @@ class eZPaEx extends eZPersistentObject
 
         $customConds = ' AND (passwordlifetime *86400 - (' . $currentTime . ' - password_last_updated ) ) < expirationnotification ';
 
+        $userClassIDs = array();
+        foreach ( eZUser::fetchUserClassList( true ) as $userClass )
+        {
+            $userClassIDs[] = $userClass->attribute( 'id' );
+        }
+        if ( empty( $userClassIDs ) )
+        {
+            return array();
+        }
+        $customConds .= ' AND ezcontentobject.id = contentobject_id ';
+        $customConds .= ' AND ' . eZDB::instance()->generateSQLINStatement( $userClassIDs, 'ezcontentobject.contentclass_id' );
+
         return eZPersistentObject::fetchObjectList( eZPaEx::definition(),
                                                     null,
                                                     $conds,
@@ -489,7 +501,7 @@ class eZPaEx extends eZPersistentObject
                                                     true,
                                                     false,
                                                     null,
-                                                    null,
+                                                    array( 'ezcontentobject' ),
                                                     $customConds );
     }
 

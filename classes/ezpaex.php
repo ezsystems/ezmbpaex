@@ -471,13 +471,13 @@ class eZPaEx extends eZPersistentObject
     /**
      * Fetch the eZPaEx objects that have their password about to expire
      *
-     * @return array of contentobject_id's corresponding to users that have to be notified
+     * @return array of eZPaEx objects corresponding to users that have to be notified
      */
-    static function fetchExpiryNotificationPendingList( )
+    static function fetchExpiryNotificationPendingList()
     {
         $currentTime = time();
         $conds = array( 'expirationnotification_sent' => 0,
-                        'passwordlifetime' => array('>', 0 ) );
+                        'passwordlifetime' => array( '>', 0 ) );
 
         $customConds = ' AND (passwordlifetime *86400 - (' . $currentTime . ' - password_last_updated ) ) < expirationnotification ';
 

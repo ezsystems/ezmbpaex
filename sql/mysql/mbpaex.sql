@@ -8,4 +8,4 @@ CREATE TABLE ezx_mbpaex (
   expirationnotification_sent int(2) NOT NULL DEFAULT 0,
 
   PRIMARY KEY  (contentobject_id)
-);
+) ENGINE=InnoDB;

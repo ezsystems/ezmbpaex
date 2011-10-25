@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+    <metadata>
+        <name>eZ Password Expiry</name>
+        <version>//autogentag//</version>
+        <copyright>Copyright (C) 1999-2011 eZ Systems AS</copyright>
+        <license>//EZP_LICENSE//</license>
+        <info_url>https://github.com/ezsystems/ezmbpaex</info_url>
+        <credits>&lt;a href="http://www.microblau.net/"&gt;Microblau&lt;/a&gt; and &lt;a href="http://www.mitsue.co.jp"&gt;Mitsue-Links Co. Ltd.&lt;/a&gt;, two dedicated eZ Partners.</credits>
+    </metadata>
+</software>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="fr_FR">
 <context>
     <name>design/admin/content/edit</name>
     <message>
@@ -48,7 +48,7 @@
     </message>
     <message>
         <source>Move this item to another location.</source>
-        <translation>Déplacer cet élément vers un autre emplacement</translation>
+        <translation>Déplacer cet élément vers un autre emplacement.</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -141,22 +141,22 @@
     <name>kernel/user</name>
     <message>
         <source>User</source>
-        <translation type="unfinished">Utilisateur</translation>
+        <translation>Utilisateur</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation type="unfinished">Modifier mon mot de passe</translation>
+        <translation>Modifier mon mot de passe</translation>
     </message>
     <message>
         <source>Forgot password</source>
-        <translation type="unfinished">Mot de passe oublié</translation>
+        <translation>Mot de passe oublié</translation>
     </message>
 </context>
 <context>
     <name>kernel/user/register</name>
     <message>
         <source>Registration info</source>
-        <translation type="unfinished">Informations de l&apos;inscription</translation>
+        <translation>Informations d&apos;inscription</translation>
     </message>
 </context>
 <context>
@@ -164,23 +164,23 @@
     <message>
         <source>Password Expiration</source>
         <comment>Datatype name</comment>
-        <translation type="unfinished">Expiration de mot de passe</translation>
+        <translation>Expiration de mot de passe</translation>
     </message>
     <message>
         <source>The password lifetime must be an integer &gt;= 0</source>
-        <translation type="unfinished">La durée de vie du mot de passe doit être un entier &gt;= 0</translation>
+        <translation>La durée de vie du mot de passe doit être un entier &gt;= 0</translation>
     </message>
     <message>
         <source>The expiration notification time must be an integer &gt;= 86400</source>
-        <translation type="unfinished">Le délai de notification d&apos;expiration doit être un entier &gt;= 86400</translation>
+        <translation>Le délai de notification d&apos;expiration doit être un entier &gt;= 86400</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match the validation rule.</source>
-        <translation type="unfinished">Le mot de passe ne respecte pas la règle de validation.</translation>
+        <translation>Le mot de passe ne respecte pas la règle de validation.</translation>
     </message>
     <message>
         <source>Wrong value in updatechildren field</source>
-        <translation type="unfinished">Valeur incorrecte dans le champ updatechildren</translation>
+        <translation>Valeur incorrecte dans le champ updatechildren</translation>
     </message>
 </context>
 <context>
@@ -270,7 +270,7 @@
     </message>
     <message>
         <source>Your password is about to expire</source>
-        <translation type="unfinished">Votre mot de passe va bientôt expirer</translation>
+        <translation>Votre mot de passe va bientôt expirer</translation>
     </message>
     <message>
         <source>%siteurl your password is about to expire</source>

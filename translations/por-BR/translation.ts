@@ -5,158 +5,158 @@
     <name>design/admin/content/edit</name>
     <message>
         <source>View and manage (copy, delete, etc.) the versions of this object.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver e gerenciar (copiar, deletar, etc.) as versões deste objeto.</translation>
     </message>
     <message>
         <source>Manage versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerenciar versões</translation>
     </message>
 </context>
 <context>
     <name>design/admin/node/view/full</name>
     <message>
         <source>Last modified</source>
-        <translation type="unfinished"></translation>
+        <translation>Última modificação</translation>
     </message>
     <message>
         <source>Node ID</source>
-        <translation type="unfinished"></translation>
+        <translation>ID do nó</translation>
     </message>
     <message>
         <source>Object ID</source>
-        <translation type="unfinished"></translation>
+        <translation>ID do objeto</translation>
     </message>
     <message>
         <source>Another language</source>
-        <translation type="unfinished"></translation>
+        <translation>Outro idioma</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar</translation>
     </message>
     <message>
         <source>Edit the contents of this item.</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar os conteúdos deste item.</translation>
     </message>
     <message>
         <source>Not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Não disponível</translation>
     </message>
     <message>
         <source>You do not have permission to edit this item.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você não possue permissão para editar este item.</translation>
     </message>
     <message>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover</translation>
     </message>
     <message>
         <source>Move this item to another location.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover este item para outro local.</translation>
     </message>
     <message>
         <source>You do not have permission to move this item to another location.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você não possue permissão para mover este para outro local.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover</translation>
     </message>
     <message>
         <source>Remove this item.</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover este item.</translation>
     </message>
     <message>
         <source>You do not have permission to remove this item.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você não possue permissão para remover este item.</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Pré-visualizar</translation>
     </message>
     <message>
         <source>New translation</source>
-        <translation type="unfinished"></translation>
+        <translation>Nova tradução</translation>
     </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
         <source>Current user</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuário atual</translation>
     </message>
     <message>
         <source>Change name, email, password, etc.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar nome, email, senha, etc.</translation>
     </message>
     <message>
         <source>Change information</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar informação</translation>
     </message>
     <message>
         <source>Change user info</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar informação de usuário</translation>
     </message>
     <message>
         <source>Change password for &lt;%username&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar senha para &lt;%username&gt;.</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation type="unfinished">Mudar senha</translation>
+        <translation>Mudar senha</translation>
     </message>
     <message>
         <source>There is %basket_count item in the shopping basket.</source>
-        <translation type="unfinished"></translation>
+        <translation>Existe %basket_count item na cesta de compras.</translation>
     </message>
     <message>
         <source>Shopping basket (%basket_count)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cesta de compras (%basket_count)</translation>
     </message>
     <message>
         <source>There are %basket_count items in the shopping basket.</source>
-        <translation type="unfinished"></translation>
+        <translation>Existem %basket_count itens na cesta de compras.</translation>
     </message>
     <message>
         <source>Logout from the system.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sair do sistema.</translation>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished"></translation>
+        <translation>Sair</translation>
     </message>
 </context>
 <context>
     <name>design/standard/user/forgotpassword</name>
     <message>
         <source>Your account information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informações da sua conta</translation>
     </message>
     <message>
         <source>Email</source>
-        <translation type="unfinished">Email</translation>
+        <translation>Email</translation>
     </message>
 </context>
 <context>
     <name>kernel/user</name>
     <message>
         <source>User</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuário</translation>
     </message>
     <message>
         <source>Forgot password</source>
-        <translation type="unfinished"></translation>
+        <translation>Esqueci minha senha</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation type="unfinished">Mudar senha</translation>
+        <translation>Mudar senha</translation>
     </message>
 </context>
 <context>
     <name>kernel/user/register</name>
     <message>
         <source>Registration info</source>
-        <translation type="unfinished"></translation>
+        <translation>Informações do cadastro</translation>
     </message>
 </context>
 <context>
@@ -164,23 +164,23 @@
     <message>
         <source>Password Expiration</source>
         <comment>Datatype name</comment>
-        <translation type="unfinished">Expiração de senha</translation>
+        <translation>Expiração de senha</translation>
     </message>
     <message>
         <source>The password lifetime must be an integer &gt;= 0</source>
-        <translation type="unfinished">O tempo de vida da senha deve ser um número inteiro &gt;= 0</translation>
+        <translation>O tempo de vida da senha deve ser um número inteiro &gt;= 0</translation>
     </message>
     <message>
         <source>The expiration notification time must be an integer &gt;= 86400</source>
-        <translation type="unfinished">O tempo de notificação de expiração da senha deve ser um número inteiro &gt;= 86400</translation>
+        <translation>O tempo de notificação de expiração da senha deve ser um número inteiro &gt;= 86400</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match the validation rule.</source>
-        <translation type="unfinished">A senha não coincide com a regra de validação.</translation>
+        <translation>A senha não coincide com a regra de validação.</translation>
     </message>
     <message>
         <source>Wrong value in updatechildren field</source>
-        <translation type="unfinished">Valor incorreto para o campo updatechildren</translation>
+        <translation>Valor incorreto para o campo updatechildren</translation>
     </message>
 </context>
 <context>
@@ -270,7 +270,7 @@
     </message>
     <message>
         <source>Your password is about to expire</source>
-        <translation type="unfinished">Sua senha está prestes a expirar</translation>
+        <translation>Sua senha está prestes a expirar</translation>
     </message>
     <message>
         <source>%siteurl your password is about to expire</source>

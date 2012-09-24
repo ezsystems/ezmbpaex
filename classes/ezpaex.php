@@ -514,7 +514,6 @@ class eZPaEx extends eZPersistentObject
     function sendExpiryNotification( $user )
     {
         $userToSendEmail = $user;
-        require_once( "kernel/common/template.php" );
         $receiver = $userToSendEmail->attribute( 'email' );
 
         $mail = new eZMail();
@@ -523,7 +522,7 @@ class eZPaEx extends eZPersistentObject
             eZDebug::writeError( 'Invalid email address set in user ' . $user->attribute( 'contentobject_id' ), 'sendExpiryNotification' );
             return false;
         }
-        $tpl = templateInit();
+        $tpl = eZTemplate::factory();
         $tpl->setVariable( 'user', $userToSendEmail );
 
         $http = eZHTTPTool::instance();

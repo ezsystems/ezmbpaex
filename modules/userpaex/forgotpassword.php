@@ -7,8 +7,7 @@
  * @package ezmbpaex
  */
 
-require_once( "kernel/common/template.php" );
-$tpl = templateInit();
+$tpl = eZTemplate::factory();
 $tpl->setVariable( 'generated', false );
 $tpl->setVariable( 'wrong_email', false );
 $tpl->setVariable( 'link', false );
@@ -99,14 +98,13 @@ if ( $module->isCurrentAction( "Generate" ) )
             $forgotPasswdObj->store();
 
             $userToSendEmail = $user;
-            require_once( "kernel/common/template.php" );
             $receiver = $email;
 
             $mail = new eZMail();
             if ( !$mail->validate( $receiver ) )
             {
             }
-            $tpl = templateInit();
+            $tpl = eZTemplate::factory();
             $tpl->setVariable( 'user', $userToSendEmail );
             $tpl->setVariable( 'object', $userToSendEmail->attribute( 'contentobject' ) );
             $tpl->setVariable( 'password', $password );

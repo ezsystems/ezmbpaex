@@ -375,7 +375,7 @@ class eZPaEx extends eZPersistentObject
             eZDebug::writeDebug( 'Going to update subtree starting at node ' . $mainNodeID . '.', __METHOD__ );
 
             // Fetch the full subtree array to update
-            $fullSubtree = eZContentObjectTreeNode::subTreeByNodeID( array( "MainNodeOnly" => true,
+            $fullSubtree = eZContentObjectTreeNode::subTreeByNodeID( array( "MainNodeOnly" => false,
                                                                             "AsObject" => false ),
                                                                     $mainNodeID );
 
@@ -394,7 +394,7 @@ class eZPaEx extends eZPersistentObject
                 }
                 else
                 {
-                    eZDebug::writeDebug( 'Skipping object ' . $add_paex_to_update->attribute( 'contentobject_id' ) , __METHOD__ );
+                    eZDebug::writeDebug( 'Skipping object ' . $add_paex_to_update['contentobject_id'] , __METHOD__ );
                 }
             }
         }

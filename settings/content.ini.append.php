@@ -1,8 +1,7 @@
 <?php /* #?ini charset="utf8"?
 
 [DataTypeSettings]
-ExtensionDirectories[]=ezmbpaex
-AvailableDataTypes[]=ezpaex
+AvailableDataTypes[ezpaex]=ezpaextype
 
 [ContentOverrideSettings]
 EnableClassGroupOverride=true

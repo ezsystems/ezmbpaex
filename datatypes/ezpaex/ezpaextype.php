@@ -358,4 +358,5 @@ class ezpaextype extends eZDataType
     }
 }
 
+eZDataType::register( ezpaextype::DATA_TYPE_STRING, "ezpaextype" );
 ?>

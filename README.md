@@ -1,3 +1,4 @@
+# eZ MB Password Expiry
 ## Description
 
 Extension that provides functionality for password expiration and validation.

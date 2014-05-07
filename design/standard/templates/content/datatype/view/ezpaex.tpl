@@ -14,7 +14,7 @@
     <div class="element">
         <label>{'Password LifeTime (DAYS)'|i18n( 'mbpaex/content/datatype' )}:</label>
         {if $attribute.content.has_lifetime}
-            {$attribute.content.passwordlifetime}
+            {$attribute.content.passwordlifetime|wash}
         {else}
             <span class="userstatus-disabled"> {'undefined'|i18n( 'mbpaex/content/datatype' )}</span>
         {/if}
@@ -23,7 +23,7 @@
     <div class="element">
         <label>{'Expiration Notification (SECONDS)'|i18n( 'mbpaex/content/datatype' )}:</label>
         {if $attribute.content.has_notification}
-            {$attribute.content.expirationnotification}
+            {$attribute.content.expirationnotification|wash}
         {else}
             <span class="userstatus-disabled"> {'undefined'|i18n( 'mbpaex/content/datatype' )}</span>
         {/if}

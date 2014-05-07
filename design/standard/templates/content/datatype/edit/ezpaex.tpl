@@ -14,13 +14,13 @@
     {* Password LifeTime. *}
     <div class="element">
         <label>{'Password LifeTime (DAYS)'|i18n( 'mbpaex/content/datatype' )}:</label>
-        <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_passwordlifetime" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="text" name="{$attribute_base}_data_paex_passwordlifetime_{$attribute.id}" size="16" value="{if $attribute.content.has_lifetime}{$attribute.content.passwordlifetime}{/if}" {if $attribute.content.can_edit|not}disabled="disabled"{/if}/>
+        <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_passwordlifetime" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="text" name="{$attribute_base}_data_paex_passwordlifetime_{$attribute.id}" size="16" value="{if $attribute.content.has_lifetime}{$attribute.content.passwordlifetime|wash}{/if}" {if $attribute.content.can_edit|not}disabled="disabled"{/if}/>
     </div>
     
     {* Expiration Notification *}
     <div class="element">
         <label>{'Expiration Notification (SECONDS)'|i18n( 'mbpaex/content/datatype' )}:</label>
-        <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_expirationnotification" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="text" name="{$attribute_base}_data_paex_expirationnotification_{$attribute.id}" size="16" value="{if $attribute.content.has_notification}{$attribute.content.expirationnotification}{/if}" {if $attribute.content.can_edit|not}disabled="disabled"{/if}/>
+        <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_expirationnotification" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="text" name="{$attribute_base}_data_paex_expirationnotification_{$attribute.id}" size="16" value="{if $attribute.content.has_notification}{$attribute.content.expirationnotification|wash}{/if}" {if $attribute.content.can_edit|not}disabled="disabled"{/if}/>
     </div>
     
     <div class="break"></div>

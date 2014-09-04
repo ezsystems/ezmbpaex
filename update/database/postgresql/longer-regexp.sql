@@ -1,0 +1,1 @@
+ALTER TABLE ezx_mbpaex ALTER COLUMN passwordvalidationregexp TYPE varchar(255);

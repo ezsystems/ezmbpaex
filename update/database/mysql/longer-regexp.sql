@@ -1,0 +1,1 @@
+ALTER TABLE ezx_mbpaex CHANGE passwordvalidationregexp passwordvalidationregexp VARCHAR(255);

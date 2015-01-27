@@ -120,8 +120,7 @@ class ezpaextype extends eZDataType
                 if (!$paex->validatePassword($newPassword))
                 {
                     $contentObjectAttribute->setValidationError( ezpI18n::tr( 'mbpaex/classes/datatypes',
-                                                                         "The password doesn't match the validation rule.
-                                                                         Previous password will be preserved if there is any." ) );
+                                                                         "The password doesn't match the validation rule. Previous password will be preserved if there is any." ) );
                     return eZInputValidator::STATE_INVALID;
                 }
             }

@@ -11,9 +11,9 @@ class eZPaEx extends eZPersistentObject
 {
     const NOT_DEFINED = -1;
 
-    function eZPaEx( $row )
+    function __construct( $row )
     {
-        $this->eZPersistentObject( $row );
+        parent::__construct( $row );
     }
 
     static function definition()

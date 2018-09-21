@@ -19,9 +19,9 @@ class ezpaextype extends eZDataType
     /**
      * Constructor
      */
-    function ezpaextype()
+    function __construct()
     {
-        $this->eZDataType( self::DATA_TYPE_STRING, ezpI18n::tr( 'mbpaex/classes/datatypes', "Password Expiration", 'Datatype name' ),
+        parent::__construct( self::DATA_TYPE_STRING, ezpI18n::tr( 'mbpaex/classes/datatypes', "Password Expiration", 'Datatype name' ),
                            array( 'translation_allowed' => false,
                                   'serialize_supported' => true ) );
     }

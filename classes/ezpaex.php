@@ -16,6 +16,15 @@ class eZPaEx extends eZPersistentObject
         parent::__construct( $row );
     }
 
+    /**
+     * @deprecated Use eZPaEx::__construct() instead
+     * @param int|array $row
+     */
+    public function eZPaEx( $row )
+    {
+        self::__construct( $row );
+    }
+
     static function definition()
     {
         return array( 'fields' => array( 'contentobject_id' => array( 'name' => 'ContentObjectID',

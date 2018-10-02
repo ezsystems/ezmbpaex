@@ -27,6 +27,14 @@ class ezpaextype extends eZDataType
     }
 
     /**
+     * @deprecated Use ezpaextype::__construct() instead
+     */
+    public function ezpaextype()
+    {
+        self::__construct();
+    }
+
+    /**
      * Delete stored object attribute
      */
     function deleteStoredObjectAttribute( $contentObjectAttribute, $version = null )

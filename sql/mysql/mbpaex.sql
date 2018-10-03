@@ -1,6 +1,6 @@
 CREATE TABLE ezx_mbpaex (
   contentobject_id int(11) NOT NULL default '0',
-  passwordvalidationregexp varchar(150) NOT NULL default '',
+  passwordvalidationregexp varchar(255) NOT NULL default '',
   passwordlifetime int(11) NOT NULL default '-1',
   expirationnotification int(11) NOT NULL default '-1',
   password_last_updated int(11) NOT NULL DEFAULT 0,

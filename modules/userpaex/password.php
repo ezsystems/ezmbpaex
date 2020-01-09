@@ -110,7 +110,7 @@ if ( $http->hasPostVariable( "OKButton" ) && $user)
                         $oldPassword = '';
 
                         eZUser::setCurrentlyLoggedInUser( $user, $UserID );
-                        eZUser::updateLastVisit( $UserID );
+                        eZUser::updateLastVisit( $UserID, true );
 
                         if ( $http->hasPostVariable( "RedirectOnChange" ) )
                         {

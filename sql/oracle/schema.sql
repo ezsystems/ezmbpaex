@@ -5,7 +5,7 @@ CREATE TABLE ezx_mbpaex (
   expirationnotification_sent INTEGER DEFAULT 0 NOT NULL,
   password_last_updated INTEGER DEFAULT 0 NOT NULL,
   passwordlifetime INTEGER DEFAULT -1 NOT NULL,
-  passwordvalidationregexp VARCHAR2(150),
+  passwordvalidationregexp VARCHAR2(255),
   updatechildren INTEGER DEFAULT 0 NOT NULL,
   PRIMARY KEY ( contentobject_id )
 );

@@ -128,8 +128,7 @@ class ezpaextype extends eZDataType
                 if (!$paex->validatePassword($newPassword))
                 {
                     $contentObjectAttribute->setValidationError( ezpI18n::tr( 'mbpaex/classes/datatypes',
-                                                                         "The password doesn't match the validation rule.
-                                                                         Previous password will be preserved if there is any." ) );
+                                                                         "The password doesn't match the validation rule. Previous password will be preserved if there is any." ) );
                     return eZInputValidator::STATE_INVALID;
                 }
             }
@@ -242,7 +241,10 @@ class ezpaextype extends eZDataType
 
                     // if audit is enabled password changes should be logged
                     $targetUser = eZUser::fetch( $contentObjectID );
-                    eZAudit::writeAudit( 'user-password-change', array( 'User id' => $targetUser->attribute( 'contentobject_id' ), 'User login' => $targetUser->attribute( 'login' ) ) );
+                    if ($targetUser)
+                    {
+                        eZAudit::writeAudit( 'user-password-change', array( 'User id' => $targetUser->attribute( 'contentobject_id' ), 'User login' => $targetUser->attribute( 'login' ) ) );
+                    }
                 }
                 // Password has changed, reset expirationnotification_sent flag to send again a notification when this new password be about to expire
                 $expirationnotificationSent = 0;
